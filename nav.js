@@ -31,7 +31,8 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-org">Friends of Loreto, BCS</div>
-        <p>A Minnesota 501(c)(3) nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, Mexico.</p>
+        <p>A Minnesota 501(c)(3) nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, Mexico.
+        [NOTE: 501(c)(3) registration is still pending. Donations are not tax deductable at this time.]</p>
         <br>
         <p>1114 Cripple Creek Pass<br>Lino Lakes, MN 55038</p>
       </div>
