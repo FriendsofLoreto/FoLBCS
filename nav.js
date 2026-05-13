@@ -16,7 +16,10 @@
           <span>Loreto, Baja California Sur</span>
         </div>
       </a>
-      <ul class="nav-links">
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html"${active('index.html')}>Home</a></li>
         <li><a href="soft-paws.html"${active('soft-paws.html')}>Soft Paws</a></li>
         <li><a href="volleyball.html"${active('volleyball.html')}>Volleyball</a></li>
@@ -31,8 +34,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-org">Friends of Loreto, BCS</div>
-        <p>A Minnesota 501(c)(3) nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, Mexico.
-        [NOTE: 501(c)(3) registration is still pending. Donations are not tax deductable at this time.]</p>
+        <p>A Minnesota 501(c)(3) nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, Mexico.</p>
         <br>
         <p>1114 Cripple Creek Pass<br>Lino Lakes, MN 55038</p>
       </div>
@@ -61,4 +63,21 @@
 
   document.getElementById('site-nav').innerHTML = nav;
   document.getElementById('site-footer').innerHTML = footer;
+
+  // Hamburger toggle
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
 })();
