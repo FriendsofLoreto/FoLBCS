@@ -1,0 +1,302 @@
+/* ── Shared Nav & Global Styles ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=Barlow+Condensed:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --teal-900: #0d3d4a;
+  --teal-700: #1a5f6e;
+  --teal-500: #2a8fa3;
+  --teal-300: #6ec9d8;
+  --teal-100: #e8f6f9;
+  --sand-700: #8a6a3a;
+  --sand-500: #c4a882;
+  --sand-200: #ede5d8;
+  --sand-100: #f7f3ee;
+  --white:    #ffffff;
+  --ink:      #1c1c1c;
+  --ink-mid:  #444444;
+  --ink-light:#888888;
+  --serif:    'Playfair Display', Georgia, serif;
+  --body:     'Source Serif 4', Georgia, serif;
+  --cond:     'Barlow Condensed', 'Arial Narrow', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--body);
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ── NAVBAR ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--teal-900);
+  border-bottom: 3px solid var(--teal-500);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-logo-text {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+}
+
+.nav-logo-text span {
+  display: block;
+  font-family: var(--cond);
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: var(--teal-300);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0 1rem;
+  height: 64px;
+  line-height: 64px;
+  font-family: var(--cond);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  height: 3px;
+  background: var(--sand-500);
+  transform: scaleX(0);
+  transition: transform 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--white);
+  background: rgba(255,255,255,0.05);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+.nav-donate-btn {
+  font-family: var(--cond) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  background: var(--sand-500) !important;
+  color: var(--white) !important;
+  padding: 0 1.2rem !important;
+  height: 38px !important;
+  line-height: 38px !important;
+  border-radius: 3px !important;
+  text-decoration: none !important;
+  transition: background 0.2s !important;
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.nav-donate-btn::after { display: none !important; }
+
+.nav-donate-btn:hover {
+  background: var(--sand-700) !important;
+  color: var(--white) !important;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  background: var(--teal-900);
+  color: rgba(255,255,255,0.7);
+  padding: 3rem 2rem 1.5rem;
+  margin-top: 0;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-brand .footer-org {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.6);
+}
+
+.footer-col h4 {
+  font-family: var(--cond);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--sand-500);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: var(--cond);
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: var(--teal-300);
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 1.5rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--cond);
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ── SHARED SECTION UTILITIES ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-eyebrow {
+  font-family: var(--cond);
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--teal-500);
+  margin-bottom: 0.5rem;
+}
+
+.section-eyebrow.sand { color: var(--sand-700); }
+
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 900;
+  color: var(--teal-700);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.section-title.sand { color: var(--sand-700); }
+
+.section-intro {
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  max-width: 640px;
+  line-height: 1.7;
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--cond);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 3px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--teal-700);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--teal-900); }
+
+.btn-sand {
+  background: var(--sand-500);
+  color: var(--white);
+}
+.btn-sand:hover { background: var(--sand-700); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--teal-700);
+  border: 2px solid var(--teal-700);
+}
+.btn-outline:hover { background: var(--teal-700); color: var(--white); }

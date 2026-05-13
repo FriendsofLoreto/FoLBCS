@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Friends of Loreto, BCS</title>
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    .page-hero {
+      background: linear-gradient(150deg, var(--teal-900), var(--teal-700));
+      padding: 5rem 0 4rem;
+      position: relative; overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute; bottom: -2px; left: 0; right: 0;
+      height: 60px;
+      background: var(--sand-100);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero-inner {
+      position: relative; z-index: 1;
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+    }
+    .page-hero-eyebrow {
+      font-family: var(--cond); font-size: 0.7rem; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--teal-300); margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .page-hero-eyebrow::before {
+      content: ''; display: inline-block; width: 24px; height: 2px; background: var(--teal-300);
+    }
+    .page-hero h1 {
+      font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 1rem;
+    }
+    .page-hero p { color: rgba(255,255,255,0.75); font-size: 1.05rem; max-width: 540px; line-height: 1.7; }
+
+    /* ── CONTACT SECTION ── */
+    .contact-section { background: var(--sand-100); padding: 5rem 0 6rem; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+
+    /* Form */
+    .contact-form-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 2.5rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+    .contact-form-card h3 {
+      font-family: var(--serif);
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--teal-700); margin-bottom: 1.5rem;
+    }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-group label {
+      display: block;
+      font-family: var(--cond);
+      font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase;
+      font-weight: 700; color: var(--ink-light);
+      margin-bottom: 0.4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--sand-200);
+      border-radius: 5px;
+      font-family: var(--body);
+      font-size: 0.95rem;
+      color: var(--ink);
+      background: var(--white);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--teal-500);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--teal-700);
+      color: var(--white);
+      border: none; border-radius: 5px;
+      font-family: var(--cond);
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--teal-900); }
+
+    .form-note {
+      font-size: 0.8rem; color: var(--ink-light); margin-top: 0.75rem;
+      font-style: italic; text-align: center;
+    }
+
+    /* Info sidebar */
+    .contact-info {}
+    .info-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      margin-bottom: 1.5rem;
+    }
+    .info-card h4 {
+      font-family: var(--cond);
+      font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 700; color: var(--ink-light); margin-bottom: 1.25rem;
+    }
+    .info-item {
+      display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.25rem;
+    }
+    .info-item:last-child { margin-bottom: 0; }
+    .info-icon {
+      width: 38px; height: 38px; border-radius: 7px;
+      background: var(--teal-100);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .info-body {}
+    .info-body strong {
+      display: block;
+      font-family: var(--cond);
+      font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase;
+      font-weight: 700; color: var(--teal-700); margin-bottom: 2px;
+    }
+    .info-body span {
+      font-size: 0.9rem; color: var(--ink-mid); line-height: 1.5;
+    }
+    .info-body a { color: var(--teal-500); text-decoration: none; }
+    .info-body a:hover { text-decoration: underline; }
+
+    /* Program links */
+    .program-links-card {
+      background: var(--teal-900);
+      border-radius: 10px;
+      padding: 2rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .program-links-card h4 {
+      font-family: var(--cond);
+      font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+      font-weight: 700; color: var(--teal-300); margin-bottom: 1.25rem;
+    }
+    .program-link-item {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+    .program-link-item:last-child { border-bottom: none; }
+    .program-link-item:hover { color: var(--teal-300); }
+    .program-link-item span { font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">Get in Touch</div>
+    <h1>Contact Us</h1>
+    <p>Questions about our programs, donations, or how to get involved? We'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-card">
+        <h3>Send us a message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Jane">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com">
+        </div>
+        <div class="form-group">
+          <label for="subject">I'm interested in…</label>
+          <select id="subject" name="subject">
+            <option value="">Select a topic</option>
+            <option value="donate">Making a donation</option>
+            <option value="softpaws">Soft Paws Cat Sanctuary</option>
+            <option value="volleyball">UABCS Volleyball</option>
+            <option value="volunteer">Volunteering or getting involved</option>
+            <option value="media">Media / Press inquiry</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what's on your mind…"></textarea>
+        </div>
+        <button type="button" class="form-submit" onclick="handleSubmit()">Send Message</button>
+        <p class="form-note">We typically respond within 2–3 business days.</p>
+        <p class="form-note" id="form-confirm" style="display:none; color:var(--teal-700); font-style:normal; font-weight:600;">✓ Message received — we'll be in touch soon!</p>
+      </div>
+
+      <!-- Info -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h4>Contact Information</h4>
+          <div class="info-item">
+            <div class="info-icon">📬</div>
+            <div class="info-body">
+              <strong>Mailing Address</strong>
+              <span>Friends of Loreto, BCS<br>1114 Cripple Creek Pass<br>Lino Lakes, MN 55038</span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">✉️</div>
+            <div class="info-body">
+              <strong>Email</strong>
+              <span><a href="mailto:info@friendsofloretobcs.org">[info@friendsofloretobcs.org]</a><br><em style="font-size:0.8rem; color:var(--ink-light);">Placeholder — update when ready</em></span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🏛️</div>
+            <div class="info-body">
+              <strong>Organization</strong>
+              <span>Friends of Loreto, BCS<br>Minnesota Nonprofit · 501(c)(3) Tax-Exempt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4>Our Programs</h4>
+          <div class="info-item">
+            <div class="info-icon">🐱</div>
+            <div class="info-body">
+              <strong>Soft Paws Cat Sanctuary</strong>
+              <span>
+                <a href="https://softpawsloreto.org/" target="_blank">softpawsloreto.org ↗</a><br>
+                <a href="https://www.facebook.com/profile.php?id=100082209770641" target="_blank">Follow on Facebook ↗</a>
+              </span>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">🏐</div>
+            <div class="info-body">
+              <strong>UABCS Loreto Volleyball</strong>
+              <span>Men's &amp; Women's Teams<br>Universidad Autónoma de Baja California Sur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="program-links-card">
+          <h4>Quick Links</h4>
+          <a href="soft-paws.html" class="program-link-item"><span>🐱</span> Soft Paws Projects &amp; Goals</a>
+          <a href="volleyball.html" class="program-link-item"><span>🏐</span> UABCS Volleyball Programs</a>
+          <a href="donate.html" class="program-link-item"><span>💛</span> How to Donate</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="nav.js"></script>
+<script>
+function handleSubmit() {
+  const btn = document.querySelector('.form-submit');
+  const confirm = document.getElementById('form-confirm');
+  btn.textContent = 'Sent ✓';
+  btn.style.background = 'var(--teal-500)';
+  btn.disabled = true;
+  confirm.style.display = 'block';
+}
+</script>
+</body>
+</html>

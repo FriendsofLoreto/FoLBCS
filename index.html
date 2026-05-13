@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends of Loreto, BCS — Home</title>
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--teal-900) 0%, var(--teal-700) 55%, var(--teal-500) 100%);
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 50%, rgba(110, 201, 216, 0.15) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(196, 168, 130, 0.1) 0%, transparent 50%);
+    }
+
+    /* Decorative wave */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem 2rem 8rem;
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--cond);
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--teal-300);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--teal-300);
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--teal-300);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      background: var(--sand-500);
+      color: var(--white);
+      font-family: var(--cond);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .btn-hero-primary:hover { background: var(--sand-700); transform: translateY(-2px); }
+
+    .btn-hero-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.5);
+      font-family: var(--cond);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2rem;
+      border-radius: 3px;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-hero-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: rgba(255,255,255,0.1);
+      padding: 8px;
+      margin: 0 auto 1.5rem;
+      display: block;
+    }
+
+    .hero-card-stat {
+      margin-bottom: 1rem;
+    }
+
+    .hero-card-stat .num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--teal-300);
+      display: block;
+      line-height: 1;
+    }
+
+    .hero-card-stat .label {
+      font-family: var(--cond);
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      display: block;
+      margin-top: 2px;
+    }
+
+    .hero-card-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.2);
+      margin: 1rem auto;
+    }
+
+    /* ── MISSION ── */
+    .mission {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .mission-text .section-eyebrow { margin-bottom: 0.5rem; }
+
+    .mission-text p {
+      font-size: 1rem;
+      color: var(--ink-mid);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .mission-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: var(--teal-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .pillar-icon.sand { background: var(--sand-200); }
+
+    .pillar-body h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal-700);
+      margin-bottom: 0.3rem;
+    }
+
+    .pillar-body h3.sand { color: var(--sand-700); }
+
+    .pillar-body p {
+      font-size: 0.9rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    /* ── PROGRAMS PREVIEW ── */
+    .programs {
+      padding: 5rem 0 6rem;
+      background: var(--sand-100);
+    }
+
+    .programs-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .program-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .program-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .program-card-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+    }
+
+    .program-card-img.teal { background: linear-gradient(135deg, var(--teal-700), var(--teal-500)); }
+    .program-card-img.teal2 { background: linear-gradient(135deg, var(--teal-500), var(--teal-300)); }
+    .program-card-img.sand { background: linear-gradient(135deg, var(--sand-500), var(--sand-700)); }
+
+    .program-card-img .card-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-family: var(--cond);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      background: rgba(0,0,0,0.25);
+      padding: 3px 8px;
+      border-radius: 2px;
+    }
+
+    .program-card-body {
+      padding: 1.5rem;
+    }
+
+    .program-card-body h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--teal-700);
+      margin-bottom: 0.5rem;
+    }
+
+    .program-card-body h3.sand { color: var(--sand-700); }
+
+    .program-card-body p {
+      font-size: 0.88rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .program-card-link {
+      font-family: var(--cond);
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--teal-500);
+      text-decoration: none;
+    }
+
+    .program-card-link.sand { color: var(--sand-700); }
+
+    /* ── CAMPAIGN HIGHLIGHT ── */
+    .campaign-highlight {
+      padding: 6rem 0;
+      background: var(--teal-900);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .campaign-highlight::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(110,201,216,0.12) 0%, transparent 70%);
+    }
+
+    .campaign-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .campaign-text .section-eyebrow { color: var(--teal-300); }
+
+    .campaign-text .section-title { color: var(--white); }
+
+    .campaign-text p {
+      color: rgba(255,255,255,0.7);
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+
+    .campaign-progress-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      padding: 2rem;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-title {
+      font-family: var(--cond);
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .progress-amount {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .progress-track {
+      height: 10px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal-500), var(--teal-300));
+      border-radius: 5px;
+      width: 5%;
+      transition: width 1s ease;
+    }
+
+    .progress-sub {
+      font-family: var(--cond);
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .progress-milestones {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+    }
+
+    .milestone {
+      text-align: center;
+    }
+
+    .milestone .year {
+      font-family: var(--cond);
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .milestone .amount {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--teal-300);
+      display: block;
+    }
+
+    .milestone .status {
+      font-family: var(--cond);
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.3);
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── DONATE CTA ── */
+    .cta-strip {
+      padding: 4rem 0;
+      background: var(--sand-200);
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--teal-700);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-strip p {
+      color: var(--ink-mid);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Loreto, Baja California Sur, Mexico</div>
+      <h1 class="hero-title">
+        Making a difference<br>
+        <em>across the border.</em>
+      </h1>
+      <p class="hero-desc">
+        Friends of Loreto, BCS is a U.S.-based 501(c)(3) nonprofit connecting American donors
+        to meaningful causes in Loreto, Mexico — protecting animals at Soft Paws Cat Sanctuary
+        and empowering student athletes at UABCS.
+      </p>
+      <div class="hero-actions">
+        <a href="donate.html" class="btn-hero-primary">Donate Now</a>
+        <a href="index.html#about" class="btn-hero-outline">Our Mission</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="logo.png" alt="Friends of Loreto BCS" class="hero-logo">
+      <div class="hero-card-stat">
+        <span class="num">2</span>
+        <span class="label">Programs Supported</span>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-card-stat">
+        <span class="num">$60K</span>
+        <span class="label">Capital Campaign Goal</span>
+      </div>
+      <div class="hero-card-divider"></div>
+      <div class="hero-card-stat">
+        <span class="num">501(c)(3)</span>
+        <span class="label">Tax-Exempt · Donations Deductible</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MISSION ── -->
+<section class="mission" id="about">
+  <div class="container">
+    <div class="mission-grid">
+      <div class="mission-text">
+        <div class="section-eyebrow">Who We Are</div>
+        <h2 class="section-title">A bridge between<br>two communities.</h2>
+        <p>
+          [PLACEHOLDER] Friends of Loreto, BCS was founded by people who love the small
+          coastal town of Loreto and wanted to find a meaningful way to support the
+          organizations doing remarkable work there. We are a Minnesota nonprofit corporation,
+          organized exclusively for charitable and educational purposes under Section 501(c)(3)
+          of the Internal Revenue Code.
+        </p>
+        <p>
+          Our model is simple: U.S.-based donors contribute tax-deductible gifts, and we
+          direct those funds to vetted projects that make a real, measurable difference
+          in Loreto — from the cats at Soft Paws to the volleyball courts at UABCS.
+        </p>
+        <br>
+        <a href="donate.html" class="btn btn-primary">Support Our Work</a>
+      </div>
+      <div class="mission-pillars">
+        <div class="pillar">
+          <div class="pillar-icon">🐱</div>
+          <div class="pillar-body">
+            <h3>Animal Welfare</h3>
+            <p>Supporting Soft Paws Cat Sanctuary with equipment, operations, and a long-term path to owning their property.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon sand">🏐</div>
+          <div class="pillar-body">
+            <h3 class="sand">Youth Sports</h3>
+            <p>Funding the UABCS men's and women's volleyball teams — jerseys, league fees, equipment, and future opportunities.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌊</div>
+          <div class="pillar-body">
+            <h3>Community Connection</h3>
+            <p>We believe cross-border relationships build stronger communities. Every dollar we raise stays in Loreto.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🇺🇸</div>
+          <div class="pillar-body">
+            <h3>Tax-Deductible Giving</h3>
+            <p>As a recognized 501(c)(3), your donations are tax deductible — making it easier to give more to the causes you care about.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMS PREVIEW ── -->
+<section class="programs">
+  <div class="container">
+    <div class="programs-header">
+      <div class="section-eyebrow">2026 Fundraising Projects</div>
+      <h2 class="section-title">Where your money goes.</h2>
+    </div>
+    <div class="programs-grid">
+      <a href="soft-paws.html" class="program-card">
+        <div class="program-card-img teal">
+          🐱
+          <span class="card-tag">Animal Welfare</span>
+        </div>
+        <div class="program-card-body">
+          <h3>Laundry Equipment</h3>
+          <p>A commercial Speed Queen washing machine to improve sanitation and reduce labor at the sanctuary.</p>
+          <span class="program-card-link">Goal: ~$2,500 →</span>
+        </div>
+      </a>
+      <a href="soft-paws.html" class="program-card">
+        <div class="program-card-img teal2">
+          🏠
+          <span class="card-tag">Capital Campaign</span>
+        </div>
+        <div class="program-card-body">
+          <h3>Property Acquisition</h3>
+          <p>A 3-year, $60,000 campaign to purchase Soft Paws' property and secure a permanent home for the sanctuary.</p>
+          <span class="program-card-link">Goal: $60,000 · Sept. 2028 →</span>
+        </div>
+      </a>
+      <a href="volleyball.html" class="program-card">
+        <div class="program-card-img sand">
+          🏐
+          <span class="card-tag">Youth Sports</span>
+        </div>
+        <div class="program-card-body">
+          <h3 class="sand">UABCS Volleyball</h3>
+          <p>League fees, jerseys, and equipment for both the men's and women's teams at the UABCS Loreto campus.</p>
+          <span class="program-card-link sand">Goal: ~$2,400 →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAPITAL CAMPAIGN HIGHLIGHT ── -->
+<section class="campaign-highlight">
+  <div class="container">
+    <div class="campaign-inner">
+      <div class="campaign-text">
+        <div class="section-eyebrow">Flagship Initiative</div>
+        <h2 class="section-title">Help Soft Paws find<br>a permanent home.</h2>
+        <p>
+          [PLACEHOLDER] Soft Paws Cat Sanctuary has been operating on rented property,
+          leaving its future uncertain. Our flagship capital campaign aims to raise $60,000
+          over three years to purchase the property outright — giving the sanctuary, its cats,
+          and its volunteers a stable foundation for decades to come.
+        </p>
+        <p>
+          $20,000 per year. Three years. September 1, 2028.
+          Will you help us get there?
+        </p>
+        <a href="donate.html" class="btn btn-sand">Join the Campaign</a>
+      </div>
+      <div class="campaign-progress-box">
+        <div class="progress-header">
+          <span class="progress-title">Campaign Progress</span>
+          <span class="progress-amount">$0 raised</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div class="progress-sub">of $60,000 goal · Year 1 of 3 · Target: Sept. 1, 2028</div>
+        <div class="progress-milestones">
+          <div class="milestone">
+            <span class="year">2026</span>
+            <span class="amount">$20,000</span>
+            <span class="status">Year 1 Goal</span>
+          </div>
+          <div class="milestone">
+            <span class="year">2027</span>
+            <span class="amount">$40,000</span>
+            <span class="status">Year 2 Goal</span>
+          </div>
+          <div class="milestone">
+            <span class="year">2028</span>
+            <span class="amount">$60,000</span>
+            <span class="status">Final Goal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ── -->
+<section class="cta-strip">
+  <div class="container">
+    <h2>Ready to make a difference in Loreto?</h2>
+    <p>Every gift — large or small — goes directly to our programs. No overhead surprises.</p>
+    <div class="cta-actions">
+      <a href="donate.html" class="btn btn-primary">Donate Now</a>
+      <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="nav.js"></script>
+</body>
+</html>
