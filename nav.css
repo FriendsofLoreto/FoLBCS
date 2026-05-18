@@ -352,3 +352,42 @@ body {
   .donate-grid { grid-template-columns: 1fr 300px !important; }
   .hero-inner { gap: 2rem !important; }
 }
+
+/* ── Nav language toggle ── */
+.lang-toggle-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 0.75rem;
+}
+
+.lang-btn-nav {
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  border-radius: 5px;
+  color: rgba(255,255,255,0.65);
+  font-family: var(--cond);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 4px 9px;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1;
+}
+
+.lang-btn-nav:hover {
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+
+.lang-btn-nav.active {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.55);
+  color: var(--white);
+}
+
+@media (max-width: 768px) {
+  .lang-toggle-nav { margin-right: 0.5rem; }
+  .lang-btn-nav { font-size: 0.65rem; padding: 3px 7px; }
+}

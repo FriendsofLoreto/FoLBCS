@@ -164,8 +164,8 @@
 
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow">Support Our Work</div>
-    <h1>Make a difference today.</h1>
+    <div class="page-hero-eyebrow" data-en="Support Our Work" data-es="Apoya Nuestra Causa">Support Our Work</div>
+    <h1 data-en="Make a difference today." data-es="Haz la diferencia hoy.">Make a difference today.</h1>
     <p>Your donation supports Soft Paws Cat Sanctuary and UABCS volleyball in Loreto, BCS, Mexico. <em>[NOTE: 501(c)(3) registration is still pending. Donations are not tax deductible at this time.]</em></p>
   </div>
 </section>
@@ -256,7 +256,7 @@
       <!-- Sidebar -->
       <div class="donate-sidebar">
         <div class="sidebar-card">
-          <h4>2026 Funding Projects</h4>
+          <h4 data-en="2026 Funding Projects" data-es="Proyectos de Recaudación 2026">2026 Funding Projects</h4>
           <div class="project-item">
             <span class="proj-name">
               <svg width="14" height="14" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle; margin-right:5px;">
@@ -345,7 +345,7 @@
               <rect x="40" y="34" width="4" height="4" fill="#1a5f6e" opacity="0.5"/>
             </svg>
           </div>
-          <p>QR code coming soon</p>
+          <p data-en="QR code coming soon" data-es="Código QR próximamente">QR code coming soon</p>
         </div>
 
         <div class="tax-note">
@@ -361,5 +361,11 @@
 
 <div id="site-footer"></div>
 <script src="nav.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('forlang') || 'en';
+    if (saved === 'es' && typeof setLang === 'function') { setTimeout(function(){ setLang('es'); }, 80); }
+  });
+</script>
 </body>
 </html>
