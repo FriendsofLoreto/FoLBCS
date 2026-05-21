@@ -37,9 +37,9 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-org">Friends of Loreto, BCS</div>
-        <p data-en="A Minnesota 501(c)(3) nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, Mexico."
-           data-es="Una organización sin fines de lucro de Minnesota que apoya el bienestar animal y los deportes juveniles en Loreto, Baja California Sur, México.">
-          A Minnesota 501(c)(3) nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, Mexico.
+        <p data-en="A Minnesota 501(c)(3) tax-exempt nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, México."
+           data-es="Una organización sin fines de lucro de Minnesota, exenta de impuestos bajo la sección 501(c)(3), que apoya el bienestar animal y los deportes juveniles en Loreto, Baja California Sur, México.">
+          A Minnesota 501(c)(3) tax-exempt nonprofit supporting animal welfare and youth sports in Loreto, Baja California Sur, México.
         </p>
         <br>
         <p>1114 Cripple Creek Pass<br>Lino Lakes, MN 55038</p>
