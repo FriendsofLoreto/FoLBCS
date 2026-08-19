@@ -172,6 +172,49 @@
       font-size: 2rem; font-weight: 900; color: var(--white); margin-bottom: 0.75rem;
     }
     .cta-strip p { color: rgba(255,255,255,0.65); margin-bottom: 2rem; }
+
+    /* ── IMPACT PHOTO GRID ── */
+    .impact-photo-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+    .impact-photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+      aspect-ratio: 4/3;
+    }
+    .impact-photo-caption {
+      font-family: var(--cond);
+      font-size: 0.7rem;
+      color: var(--ink-light);
+      margin-top: 0.6rem;
+      letter-spacing: 0.3px;
+    }
+    .status-badge {
+      display: inline-block;
+      font-family: var(--cond);
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 2px;
+      background: var(--teal-500);
+      color: var(--white);
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* Override the generic checkmark so only funded items show ✓ */
+    .funding-item.needed::before {
+      content: '○';
+      color: var(--sand-700);
+    }
   </style>
 </head>
 <body>
@@ -232,10 +275,62 @@
   </div>
 </section>
 
+<!-- IMPACT TO DATE -->
+<section class="teams-section" style="padding-top:0; padding-bottom:0;">
+  <div class="container">
+    <div class="section-eyebrow sand" data-en="Impact to Date" data-es="Impacto a la Fecha">Impact to Date</div>
+    <h2 class="section-title sand" data-en="Brand-new jerseys, on the court." data-es="Uniformes nuevos, en la cancha.">Brand-new jerseys, on the court.</h2>
+    <p class="section-intro" data-en="Thanks to donor support, both the UABCS Loreto men's and women's teams received brand-new 2026 jerseys and had their league registration fees paid in full — keeping these athletes fully registered and equipped to compete." data-es="Gracias al apoyo de los donantes, tanto el equipo varonil como el femenil de UABCS Loreto recibieron uniformes nuevos para la temporada 2026 y sus cuotas de inscripción a la liga fueron pagadas en su totalidad — manteniendo a estos atletas completamente inscritos y equipados para competir.">
+      Thanks to donor support, both the UABCS Loreto men's and women's teams received brand-new 2026 jerseys and had their league registration fees paid in full — keeping these athletes fully registered and equipped to compete.
+    </p>
+    <div class="impact-photo-grid">
+      <img src="volleyball-team-jerseys.jpg" alt="UABCS Loreto volleyball players holding up their brand-new 2026 jerseys">
+      <img src="volleyball-jersey-detail.jpg" alt="Close-up of new UABCS Loreto volleyball jerseys">
+    </div>
+    <div class="impact-photo-caption" data-en="UABCS Loreto volleyball players with their new jerseys, funded by Friends of Loreto donors." data-es="Jugadores de voleibol de UABCS Loreto con sus nuevos uniformes, financiados por donantes de Friends of Loreto.">UABCS Loreto volleyball players with their new jerseys, funded by Friends of Loreto donors.</div>
+  </div>
+</section>
+
 <!-- TEAMS -->
 <section class="teams-section">
   <div class="container">
-    <div style="text-align:center; margin-top: 1rem;">
+    <div class="section-eyebrow sand" data-en="The Teams" data-es="Los Equipos">The Teams</div>
+    <h2 class="section-title sand" data-en="Two squads, one campaign." data-es="Dos equipos, una campaña.">Two squads, one campaign.</h2>
+    <div class="teams-grid">
+      <div class="team-card">
+        <div class="team-card-header men">
+          <span class="team-emoji">🏐</span>
+          <h3 data-en="Men's Team" data-es="Equipo Varonil">Men's Team</h3>
+          <div class="team-location" data-en="UABCS Loreto Campus" data-es="Campus UABCS Loreto">UABCS Loreto Campus</div>
+        </div>
+        <div class="team-card-body">
+          <p data-en="The men's squad competes at the regional collegiate level, representing UABCS Loreto with pride." data-es="El equipo varonil compite a nivel colegial regional, representando a la UABCS Loreto con orgullo.">The men's squad competes at the regional collegiate level, representing UABCS Loreto with pride.</p>
+          <div class="funding-items">
+            <h4 data-en="Funding Status" data-es="Estado de Financiamiento">Funding Status</h4>
+            <div class="funding-item" data-en="New 2026 team jerseys — funded" data-es="Uniformes nuevos 2026 — financiado">New 2026 team jerseys — funded</div>
+            <div class="funding-item" data-en="League registration fees — funded" data-es="Cuotas de inscripción a la liga — financiado">League registration fees — funded</div>
+            <div class="funding-item needed" data-en="Essential equipment — fundraising" data-es="Equipo esencial — en recaudación">Essential equipment — fundraising</div>
+          </div>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-card-header women">
+          <span class="team-emoji">🏐</span>
+          <h3 data-en="Women's Team" data-es="Equipo Femenil">Women's Team</h3>
+          <div class="team-location" data-en="UABCS Loreto Campus" data-es="Campus UABCS Loreto">UABCS Loreto Campus</div>
+        </div>
+        <div class="team-card-body">
+          <p data-en="The women's squad competes at the regional collegiate level, representing UABCS Loreto with pride." data-es="El equipo femenil compite a nivel colegial regional, representando a la UABCS Loreto con orgullo.">The women's squad competes at the regional collegiate level, representing UABCS Loreto with pride.</p>
+          <div class="funding-items">
+            <h4 data-en="Funding Status" data-es="Estado de Financiamiento">Funding Status</h4>
+            <div class="funding-item" data-en="New 2026 team jerseys — funded" data-es="Uniformes nuevos 2026 — financiado">New 2026 team jerseys — funded</div>
+            <div class="funding-item" data-en="League registration fees — funded" data-es="Cuotas de inscripción a la liga — financiado">League registration fees — funded</div>
+            <div class="funding-item needed" data-en="Essential equipment — fundraising" data-es="Equipo esencial — en recaudación">Essential equipment — fundraising</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 3rem;">
       <a href="https://www.zeffy.com/en-US/donation-form/donate-to-uabcs-loreto-volleyball" target="_blank" class="btn btn-sand" data-en="Donate to UABCS Volleyball" data-es="Donar al Voleibol UABCS">Donate to UABCS Volleyball</a>
     </div>
   </div>

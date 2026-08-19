@@ -290,6 +290,46 @@
       color: var(--ink-light);
       display: block;
     }
+
+    /* ── IMPACT PHOTO GRID ── */
+    .impact-photo-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+    .impact-photo-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      display: block;
+    }
+    .impact-photo-main { grid-row: 1 / 3; aspect-ratio: 4/3; }
+    .impact-photo-sub { aspect-ratio: 4/3; }
+    .impact-photo-caption {
+      font-family: var(--cond);
+      font-size: 0.7rem;
+      color: var(--ink-light);
+      margin-top: 0.6rem;
+      letter-spacing: 0.3px;
+    }
+    .status-badge {
+      display: inline-block;
+      font-family: var(--cond);
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 2px;
+      background: var(--teal-500);
+      color: var(--white);
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    .status-badge.in-progress { background: var(--sand-700); }
   </style>
 </head>
 <body>
@@ -325,13 +365,13 @@
     <div style="max-width:640px; margin:0 auto;">
       <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:0.5rem;">
         <span style="font-family:var(--cond); font-size:0.75rem; letter-spacing:2px; text-transform:uppercase; color:var(--teal-300); font-weight:700;" data-en="2026 Fundraising Goal · Soft Paws Cat Sanctuary" data-es="Meta de Recaudación 2026 · Refugio Soft Paws">2026 Fundraising Goal · Soft Paws Cat Sanctuary</span>
-        <span style="font-family:var(--serif); font-size:1.3rem; font-weight:700; color:var(--white);" data-en="$16,053 raised of $45,000" data-es="$16,053 recaudados de $45,000">$16,053 raised of $45,000</span>
+        <span style="font-family:var(--serif); font-size:1.3rem; font-weight:700; color:var(--white);" data-en="$20,665 raised of $45,000" data-es="$20,665 recaudados de $45,000">$20,665 raised of $45,000</span>
       </div>
       <div style="height:12px; background:rgba(255,255,255,0.1); border-radius:6px; overflow:hidden; margin-bottom:0.5rem;">
-        <div style="width:35.67%; height:100%; background:linear-gradient(90deg, var(--teal-500), var(--teal-300)); border-radius:6px; transition:width 1s ease;"></div>
+        <div style="width:45.92%; height:100%; background:linear-gradient(90deg, var(--teal-500), var(--teal-300)); border-radius:6px; transition:width 1s ease;"></div>
       </div>
       <div style="display:flex; justify-content:space-between;">
-        <span style="font-family:var(--cond); font-size:0.68rem; color:rgba(255,255,255,0.45); letter-spacing:0.5px;" data-en="35.67% of goal reached" data-es="35.67% de la meta alcanzada">35.67% of goal reached</span>
+        <span style="font-family:var(--cond); font-size:0.68rem; color:rgba(255,255,255,0.45); letter-spacing:0.5px;" data-en="45.92% of goal reached" data-es="45.92% de la meta alcanzada">45.92% of goal reached</span>
         <a href="https://www.zeffy.com/en-US/donation-form/donate-to-friends-of-loreto-bcs" target="_blank" style="font-family:var(--cond); font-size:0.68rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--sand-500); text-decoration:none;" data-en="Donate Now →" data-es="Donar Ahora →">Donate Now →</a>
       </div>
     </div>
@@ -360,6 +400,44 @@
   </div>
 </section>
 
+<!-- IMPACT TO DATE -->
+<section class="intro-section" style="background: var(--white); padding-top: 0;">
+  <div class="container">
+    <div class="capital-card">
+      <span class="multi-badge" data-en="Impact to Date" data-es="Impacto a la Fecha">Impact to Date</span>
+      <h3 style="font-family:var(--serif); font-size:1.6rem; font-weight:900; color:var(--teal-900); margin-bottom:0.75rem;"
+          data-en="What your support has already done" data-es="Lo que tu apoyo ya ha logrado">What your support has already done</h3>
+      <p style="font-size:0.98rem; color:var(--ink-mid); line-height:1.8; max-width:760px;"
+         data-en="Since we began supporting Soft Paws, Friends of Loreto, BCS has delivered a new Speed Queen light commercial washing machine to the sanctuary, funded several hundred dollars in in-kind supplies — beds, carriers, blankets, and playpens — and helped facilitate the adoption of 3 kittens into homes in the United States, the first of many to come."
+         data-es="Desde que comenzamos a apoyar a Soft Paws, Friends of Loreto, BCS ha entregado una nueva lavadora comercial ligera Speed Queen al refugio, financiado varios cientos de dólares en insumos en especie — camas, transportadoras, cobijas y corrales — y ayudado a facilitar la adopción de 3 gatitos en hogares en Estados Unidos, los primeros de muchos más por venir.">
+        Since we began supporting Soft Paws, Friends of Loreto, BCS has delivered a new Speed Queen light commercial washing machine to the sanctuary, funded several hundred dollars in in-kind supplies — beds, carriers, blankets, and playpens — and helped facilitate the adoption of 3 kittens into homes in the United States, the first of many to come.
+      </p>
+
+      <div class="milestones-row">
+        <div class="ms-item">
+          <span class="ms-amount">$5,000</span>
+          <span class="ms-label" data-en="Cash Grants Provided" data-es="Donativos en Efectivo Otorgados">Cash Grants Provided</span>
+        </div>
+        <div class="ms-item">
+          <span class="ms-amount">$2,800</span>
+          <span class="ms-label" data-en="Grant Toward Mexican Non-Profit Registration" data-es="Donativo para Registro Como A.C. en México">Grant Toward Mexican Non-Profit Registration</span>
+        </div>
+        <div class="ms-item">
+          <span class="ms-amount">3</span>
+          <span class="ms-label" data-en="Kittens Adopted in the U.S." data-es="Gatitos Adoptados en EE. UU.">Kittens Adopted in the U.S.</span>
+        </div>
+      </div>
+
+      <div class="impact-photo-grid">
+        <img class="impact-photo-main" src="softpaws-supplies-delivery.jpg" alt="A truckload of donated pet beds, cat litter, cat food, and cleaning supplies delivered to Soft Paws Cat Sanctuary">
+        <img class="impact-photo-sub" src="softpaws-inkind-donations.jpg" alt="Donated cat beds, blankets, and cat caves purchased in-kind for Soft Paws">
+        <img class="impact-photo-sub" src="softpaws-supply-cart.jpg" alt="Cleaning supplies and cat litter purchased for Soft Paws Cat Sanctuary">
+      </div>
+      <div class="impact-photo-caption" data-en="A recent supply delivery funded by Friends of Loreto donors — cat food, litter, cleaning supplies, and bedding for the cats in Soft Paws' care." data-es="Una entrega reciente de insumos financiada por donantes de Friends of Loreto — alimento, arena, artículos de limpieza y ropa de cama para los gatos bajo el cuidado de Soft Paws.">A recent supply delivery funded by Friends of Loreto donors — cat food, litter, cleaning supplies, and bedding for the cats in Soft Paws' care.</div>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section class="projects-section">
   <div class="container">
@@ -372,13 +450,14 @@
     <div class="project-card" style="grid-template-columns:1fr;">
       <div class="project-body">
         <span class="project-tag tag-teal" data-en="Equipment" data-es="Equipamiento">Equipment</span>
+        <span class="status-badge" data-en="Completed" data-es="Completado">Completed</span>
         <h3 data-en="Commercial Laundry Equipment" data-es="Equipo Comercial de Lavandería">Commercial Laundry Equipment</h3>
         <div class="project-location" data-en="Loreto, Baja California Sur" data-es="Loreto, Baja California Sur">Loreto, Baja California Sur</div>
-        <p>
-          Soft Paws currently relies on hand-washing to clean bedding, towels, and linens for the dozens of cats in their care. A commercial-grade Speed Queen washing machine would dramatically reduce labor time and improve sanitation standards across the sanctuary.
+        <p data-en="Soft Paws previously relied on hand-washing to clean bedding, towels, and linens for the dozens of cats in their care. Thanks to donor support, Friends of Loreto, BCS purchased and delivered a new Speed Queen light commercial washing machine to the sanctuary, dramatically reducing labor time and improving sanitation standards." data-es="Soft Paws dependía anteriormente del lavado a mano para limpiar ropa de cama, toallas y sábanas para las decenas de gatos bajo su cuidado. Gracias al apoyo de los donantes, Friends of Loreto, BCS compró y entregó una nueva lavadora comercial ligera Speed Queen al refugio, reduciendo drásticamente el tiempo de trabajo y mejorando los estándares de higiene.">
+          Soft Paws previously relied on hand-washing to clean bedding, towels, and linens for the dozens of cats in their care. Thanks to donor support, Friends of Loreto, BCS purchased and delivered a new Speed Queen light commercial washing machine to the sanctuary, dramatically reducing labor time and improving sanitation standards.
         </p>
-        <p>
-          This upgrade is essential to sustaining safe, healthy conditions as the rescue grows. Funds raised will cover the full cost of equipment, delivery, and installation.
+        <p data-en="This upgrade is already helping sustain safe, healthy conditions as the rescue grows." data-es="Esta mejora ya está ayudando a mantener condiciones seguras y saludables a medida que crece el refugio.">
+          This upgrade is already helping sustain safe, healthy conditions as the rescue grows.
         </p>
       </div>
     </div>
@@ -387,13 +466,14 @@
     <div class="project-card" style="grid-template-columns:1fr;">
       <div class="project-body">
         <span class="project-tag tag-teal" data-en="Operations" data-es="Operaciones">Operations</span>
+        <span class="status-badge" data-en="Completed" data-es="Completado">Completed</span>
         <h3>Mexican Non-Profit Registration &amp; Accounting</h3>
         <div class="project-location" data-en="Loreto, Baja California Sur" data-es="Loreto, Baja California Sur">Loreto, Baja California Sur</div>
-        <p>
-          Formalizing Soft Paws as a legally recognized non-profit in Mexico (asociación civil) will unlock local institutional support, municipal grants, and long-term sustainability. This project covers the accounting, legal, and filing fees required to complete the registration process.
+        <p data-en="Formalizing Soft Paws as a legally recognized non-profit in Mexico (asociación civil) unlocks local institutional support, municipal grants, and long-term sustainability. This project covered the accounting, legal, and filing fees required to complete the registration process." data-es="Formalizar a Soft Paws como una organización sin fines de lucro legalmente reconocida en México (asociación civil) permite el acceso a apoyo institucional local, subvenciones municipales y sostenibilidad a largo plazo. Este proyecto cubrió los honorarios contables, legales y de trámite necesarios para completar el proceso de registro.">
+          Formalizing Soft Paws as a legally recognized non-profit in Mexico (asociación civil) unlocks local institutional support, municipal grants, and long-term sustainability. This project covered the accounting, legal, and filing fees required to complete the registration process.
         </p>
-        <p>
-          A one-time investment that establishes Soft Paws as a permanent, credible institution in Loreto. Your donation directly funds the professional services needed to make this happen.
+        <p data-en="Friends of Loreto, BCS provided a grant of $2,800 to cover the accounting fees for this process, and Soft Paws is now officially registered as a Mexican non-profit (asociación civil) — a major milestone that makes it a permanent, credible institution in Loreto." data-es="Friends of Loreto, BCS otorgó un donativo de $2,800 para cubrir los honorarios contables de este proceso, y Soft Paws ya está oficialmente registrado como una asociación civil en México — un hito importante que la consolida como una institución permanente y confiable en Loreto.">
+          Friends of Loreto, BCS provided a grant of $2,800 to cover the accounting fees for this process, and Soft Paws is now officially registered as a Mexican non-profit (asociación civil) — a major milestone that makes it a permanent, credible institution in Loreto.
         </p>
       </div>
     </div>
@@ -402,14 +482,19 @@
     <div class="project-card" style="grid-template-columns:1fr;">
       <div class="project-body">
         <span class="project-tag tag-teal" data-en="Operations" data-es="Operaciones">Operations</span>
+        <span class="status-badge in-progress" data-en="Ongoing" data-es="En Curso">Ongoing</span>
         <h3 data-en="Supplies Campaign: Food, Litter, Medicine &amp; Enrichment" data-es="Insumos: Alimento, Arena, Medicina y Enriquecimiento">Supplies Campaign: Food, Litter, Medicine &amp; Enrichment</h3>
         <div class="project-location" data-en="Loreto, Baja California Sur" data-es="Loreto, Baja California Sur">Loreto, Baja California Sur</div>
         <p>
           Day-to-day operations at Soft Paws depend on a reliable stockpile of essentials: quality cat food, litter, flea/tick preventatives, wound-care supplies, and enrichment toys.
         </p>
-        <p>
-          This campaign builds a three-to-six-month reserve buffer so the sanctuary can focus on rescue and adoption rather than crisis fundraising. Donations at any level make a direct, immediate difference in the lives of the cats in care.
+        <p data-en="This campaign builds a three-to-six-month reserve buffer so the sanctuary can focus on rescue and adoption rather than crisis fundraising. So far, Friends of Loreto, BCS has provided $5,000 in cash grants plus several hundred dollars in in-kind supplies — beds, carriers, blankets, and playpens — directly to Soft Paws. Donations at any level make a direct, immediate difference in the lives of the cats in care." data-es="Esta campaña construye una reserva de tres a seis meses para que el refugio pueda concentrarse en el rescate y la adopción en lugar de en recaudar fondos de emergencia. Hasta ahora, Friends of Loreto, BCS ha otorgado $5,000 en donativos en efectivo, además de varios cientos de dólares en insumos en especie — camas, transportadoras, cobijas y corrales — directamente a Soft Paws. Las donaciones de cualquier monto marcan una diferencia directa e inmediata en la vida de los gatos bajo su cuidado.">
+          This campaign builds a three-to-six-month reserve buffer so the sanctuary can focus on rescue and adoption rather than crisis fundraising. So far, Friends of Loreto, BCS has provided $5,000 in cash grants plus several hundred dollars in in-kind supplies — beds, carriers, blankets, and playpens — directly to Soft Paws. Donations at any level make a direct, immediate difference in the lives of the cats in care.
         </p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem;">
+          <img src="softpaws-beds-carriers.jpg" alt="Donated pet beds and carriers ready for delivery to Soft Paws" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px;">
+          <img src="softpaws-cat-food-stock.jpg" alt="Cat food stocked for Soft Paws Cat Sanctuary" style="width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px;">
+        </div>
       </div>
     </div>
 
